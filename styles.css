@@ -1,0 +1,27 @@
+
+style1 {
+     font-weight: bold;
+}
+table {
+	width:100%;
+    border: 1px solid black;
+}
+th {
+	/* width: 20%;*/
+    border: 1px solid black;
+	text-align: center;
+	
+}
+td {
+	vertical-align: top;
+    border: 1px solid black;
+}
+tr{
+	
+	
+}
+
+/* th:hover{
+	background-color: cadetblue;
+}
+
