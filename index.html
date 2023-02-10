@@ -17,9 +17,21 @@
 	  document.getElementById("mySelect").multiple = true;
 	}
 
-  function myFunction1() {
-  location.replace("index.php")
-  }
+	
+		
+	function myFunction2() {
+		if(document.getElementById("demo").getAttribute= "COLUMN2"){
+	  		document.getElementById("demo").innerHTML = "COLUMN255";
+		}else{
+			document.getElementById("demo").innerHTML = "COLUMN2";
+		}
+	}
+	
+	function myFunction3() {
+	  document.getElementById("demo").style.color = "red";
+	  document.getElementById("demo").innerHTML = document.getElementById("opt1").getAttribute();
+	}
+		
 	</script>
 	<!-- END OF JAVASCRIPT FUNCTION ------------------------------>
   <title>Documentss</title>
@@ -38,8 +50,8 @@
       <td > 
 		  
 		<form> <!-- OPTION 1 Start-->
-			<select style="width: 200px;" id="mySelect" size="5" >
-			  <option><style1>TOP</style1></option>
+			<select style="width: 200px;" id="mySelect" size="5" onclick="myFunction3()">
+			  <option id="opt1"><style1>TOP</style1></option>
 				<option><strong> APPLE</strong></option>
 			  <option>Pear</option>
 			  <option>Banana</option>
@@ -48,10 +60,10 @@
 		</form> <!-- OPTION 1 END-->
 		  
         <style1>COLUMN1</style1>
-        <button type="button" onclick="myFunction1()" class="btn btn-sm">Small Button</button>
+        <button id="demo2" type="button" onclick="myFunction2()" class="btn btn-sm">Small Button</button>
         <p>&nbsp;</p>
         <p>&nbsp;</p></td>
-		<td colspan="4"> COLUMN2</td>
+		<td colspan="4"><p id="demo"> COLUMN2</p></td>
     </tr>
   </table>
 </body>
