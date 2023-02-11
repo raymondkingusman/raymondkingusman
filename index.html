@@ -13,6 +13,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- JAVASCRIPT FUNCTION ------------------------------------->
 	<script>
+		
+		
 	function selectMultiple() {
 	  document.getElementById("mySelect").multiple = true;
 	}
@@ -27,43 +29,147 @@
 		}
 	}
 	
-	function myFunction3() {
-	  document.getElementById("demo").style.color = "red";
-	  document.getElementById("demo").innerHTML = document.getElementById("opt1").getAttribute();
+	function CVselect() {
+	  	 document.getElementById("pic1").setAttribute("src","CV.jpg");
+		 document.getElementById("pic1").setAttribute("height","700");
+		 document.getElementById("pic1").setAttribute("width","500");
+		/* HIDE TABLE2**/
+		 var element1 = document.getElementById("tbl2");
+    	 var temp = element1.setAttribute("hidden","hidden");
+		 
+		document.getElementById("demo").innerHTML = ""
+		document.getElementById("nameRaymond").innerHTML = "";
 	}
+	function NameSelect() {
+		 document.getElementById("demo").innerHTML = "";
+		document.getElementById("nameRaymond").innerHTML = "Raymond King Usman";
+		 const opts1 = document.getElementById("opt2") 
+		 var temp = opts1.getAttribute("value");
+	  	 document.getElementById("pic1").setAttribute("src","");
+		 document.getElementById("pic1").setAttribute("height","0");
+		 document.getElementById("pic1").setAttribute("width","0");
+		/* SHOW TABLE2**/
+		 var element1 = document.getElementById("tbl2");
+    	 var temp = element1.removeAttribute("hidden");
 		
+		 document.getElementById("demo").innerHTML = "";
+	  
+	}
+		function changeColor(colorText){
+			document.getElementById("nameRaymond").style.color = colorText;
+			/* this is just a TEST
+			const colorSet = ["red", "blue", "yellow", "green"];
+			for (let i = 0; i < colorSet.length; i++) {
+				if(colorSet[i] = colorText){
+					document.getElementById("nameRaymond").style.color = colorSet[i];
+					i = colorSet.length++;
+				}
+			}*/
+
+		}
+		
+		function changeSize(txtSize){
+			var listValue = txtSize.options[txtSize.selectedIndex].text;
+  			document.getElementById("nameRaymond").style.fontSize = listValue;
+			
+		}
+		
+		function changeText() {
+		  var temp = document.getElementById("myText").value;
+		  document.getElementById("nameRaymond").innerHTML = temp;
+		}
+		
+		function DEMO(){
+			var temp = "yy";
+			document.getElementById("demo").innerHTML="";
+			
+		}
 	</script>
 	<!-- END OF JAVASCRIPT FUNCTION ------------------------------>
-  <title>Documentss</title>
+  <title>SAMPLE ONLY</title>
 </head>
 	
 <body>
-  <table >
+	<!-- MAIN TABLE-->
+  <table border="1" width="100%">
     <tr>
-      <th>HOME</th>
-      <th>HTML</th>
-      <th>CSS</th>
-      <th>JAVA</th>
-      <th>PHP</th>
+		<!-- TOP MAIN TABLE -->
+      <th colspan="2">
+		
+		  <table width="100%">
+		  	<tr >
+				<th>HOME </th>
+			  	<th>BLANK </th>
+				<th>BLANK </th>
+				<th>BLANK </th>
+			  </tr>
+		  </table>
+	</th>
+      
     </tr>
     <tr>
-      <td > 
+      <td width="20%" align="center" valign="top"> 
 		  
 		<form> <!-- OPTION 1 Start-->
-			<select style="width: 200px;" id="mySelect" size="5" onclick="myFunction3()">
-			  <option id="opt1"><style1>TOP</style1></option>
-				<option><strong> APPLE</strong></option>
-			  <option>Pear</option>
-			  <option>Banana</option>
-			  <option>Orange</option>
+			<select style="width: 100%;" id="mySelect" size="5" onChange="" >
+				
+			  <option id="opt1" onclick="CVselect()">Curriculum Vitae</option>
+			  <option id="opt2" onclick="NameSelect()" value="Raymond"> JavaScript Text manipulation</option>
+			  <option >option</option>
+			  <option>option</option>
+			  <option>option</option>
 			</select>
 		</form> <!-- OPTION 1 END-->
 		  
-        <style1>COLUMN1</style1>
+        <p id="demo3" onClick="DEMO()">COLUMN1</p>
+		  
         <button id="demo2" type="button" onclick="myFunction2()" class="btn btn-sm">Small Button</button>
         <p>&nbsp;</p>
         <p>&nbsp;</p></td>
-		<td colspan="4"><p id="demo"> COLUMN2</p></td>
+		<td align="center" valign="top">
+			<p id="demo"> COLUMN2</p>
+			<img id="pic1" >
+			<!-- NAME TEXT -->
+			<p id="nameRaymond" ></p>
+			<!-- TABLE 2 ----------------------------------->
+			<table id="tbl2" border="0" width="100%" align="left" vspace="top" hidden="hidden">
+				<tr>
+					<th align="left" width="30%">
+						<h1>Select Color</h1>
+						
+						<p name="ccolor" onClick="changeColor('red')" style="color:red">RED</p>
+						<p name="ccolor" onClick="changeColor('blue')" style="color:blue">BLUE</p>
+						<p name="ccolor" onClick="changeColor('yellow')" style="color:yellow">YELLOW</p>
+						<p name="ccolor" onClick="changeColor('green')" style="color:green">GREEN</p>
+					</th>
+					<th align="left" valign="top">
+						<h2>Resize Font</h2>
+						<br>
+						Select Desired Size :
+						<select onchange="changeSize(this);" size="1">
+						  <option>xx-small</option>
+						  <option>x-small</option>
+						  <option>small</option>
+						  <option>medium</option>
+						  <option>large</option>
+						  <option>x-large</option>
+						  <option>xx-large</option>
+						  <option>100%</option>
+						  <option>250%</option>
+						  <option>2cm</option>
+						  <option>100px</option>
+						</select>
+						
+					</th>
+					<th>
+						Enter Text: <input type="text" id="myText" value="">
+						<br>
+						<button onClick="changeText()">Change</button>
+					</th>
+				</tr>
+			</table>
+			
+		</td>
     </tr>
   </table>
 </body>

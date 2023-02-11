@@ -2,12 +2,12 @@
 style1 {
      font-weight: bold;
 }
+/*
 table {
 	width:100%;
     border: 1px solid black;
 }
 th {
-	/* width: 20%;*/
     border: 1px solid black;
 	text-align: center;
 	
@@ -21,7 +21,8 @@ tr{
 	
 }
 
-/* th:hover{
+th:hover{
 	background-color: cadetblue;
 }
+*/
 
