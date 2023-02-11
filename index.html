@@ -28,12 +28,43 @@
 			document.getElementById("demo").innerHTML = "COLUMN2";
 		}
 	}
-	
-	function CVselect() {
+	function changeSelect(txtSelect){
+		var listValue = txtSelect.options[txtSelect.selectedIndex].text;
+		
+		if( listValue == "Curriculum Vitae"){
+			
+		   	document.getElementById("pic1").setAttribute("src","CV.jpg");
+			document.getElementById("pic1").setAttribute("height","700");
+			document.getElementById("pic1").setAttribute("width","500");
+			/* HIDE TABLE2**/
+			var element1 = document.getElementById("tbl2");
+			var temp = element1.setAttribute("hidden","hidden");
+
+			document.getElementById("demo").innerHTML = ""
+			document.getElementById("nameRaymond").innerHTML = "";
+			
+		   }
+		if(listValue == "JavaScript Text manipulation"){
+				document.getElementById("demo").innerHTML = "";
+				document.getElementById("nameRaymond").innerHTML = "Raymond King Usman";
+				
+				document.getElementById("pic1").setAttribute("src","");
+				document.getElementById("pic1").setAttribute("height","0");
+				document.getElementById("pic1").setAttribute("width","0");
+				/* SHOW TABLE2**/
+				var element1 = document.getElementById("tbl2");
+				var temp = element1.removeAttribute("hidden");
+
+				document.getElementById("demo").innerHTML = "";
+					
+			}
+		
+	}
+	/*function CVselect() {
 	  	 document.getElementById("pic1").setAttribute("src","CV.jpg");
 		 document.getElementById("pic1").setAttribute("height","700");
 		 document.getElementById("pic1").setAttribute("width","500");
-		/* HIDE TABLE2**/
+		/* HIDE TABLE2**//*
 		 var element1 = document.getElementById("tbl2");
     	 var temp = element1.setAttribute("hidden","hidden");
 		 
@@ -48,13 +79,13 @@
 	  	 document.getElementById("pic1").setAttribute("src","");
 		 document.getElementById("pic1").setAttribute("height","0");
 		 document.getElementById("pic1").setAttribute("width","0");
-		/* SHOW TABLE2**/
+		/* SHOW TABLE2**//*
 		 var element1 = document.getElementById("tbl2");
     	 var temp = element1.removeAttribute("hidden");
 		
 		 document.getElementById("demo").innerHTML = "";
 	  
-	}
+	}**/
 		function changeColor(colorText){
 			document.getElementById("nameRaymond").style.color = colorText;
 			/* this is just a TEST
@@ -111,11 +142,11 @@
       <td width="20%" align="center" valign="top"> 
 		  
 		<form> <!-- OPTION 1 Start-->
-			<select style="width: 100%;" id="mySelect" size="5" onChange="" >
+			<select style="width: 100%;" id="mySelect" size="5" onchange="changeSelect(this);">
 				
-			  <option id="opt1" onclick="CVselect()">Curriculum Vitae</option>
-			  <option id="opt2" onclick="NameSelect()" value="Raymond"> JavaScript Text manipulation</option>
-			  <option >option</option>
+			  <option>Curriculum Vitae</option>
+			  <option> JavaScript Text manipulation</option>
+			  <option>option</option>
 			  <option>option</option>
 			  <option>option</option>
 			</select>
