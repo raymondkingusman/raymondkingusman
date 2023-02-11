@@ -13,14 +13,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- JAVASCRIPT FUNCTION ------------------------------------->
 	<script>
-		
-		
-	function selectMultiple() {
-	  document.getElementById("mySelect").multiple = true;
-	}
-
 	
-		
 	function myFunction2() {
 		if(document.getElementById("demo").getAttribute= "COLUMN2"){
 	  		document.getElementById("demo").innerHTML = "COLUMN255";
@@ -28,86 +21,112 @@
 			document.getElementById("demo").innerHTML = "COLUMN2";
 		}
 	}
-	function changeSelect(txtSelect){
-		var listValue = txtSelect.options[txtSelect.selectedIndex].text;
 		
-		if( listValue == "Curriculum Vitae"){
-			
-		   	document.getElementById("pic1").setAttribute("src","CV.jpg");
-			document.getElementById("pic1").setAttribute("height","700");
-			document.getElementById("pic1").setAttribute("width","500");
-			/* HIDE TABLE2**/
+	function CV(hidshow){
+		if(hidshow == "hide"){
+			/** HIDE CV **/
+			document.getElementById("pic1").setAttribute("src","");
+			document.getElementById("pic1").setAttribute("height","0");
+			document.getElementById("pic1").setAttribute("width","0");
+		   }else{
+				/** SHOW CV **/
+				document.getElementById("pic1").setAttribute("src","CV.jpg");
+				document.getElementById("pic1").setAttribute("height","700");
+				document.getElementById("pic1").setAttribute("width","500");
+		   }
+		
+	}
+		
+	function JStxtM(hidshow){
+		if(hidshow == "hide"){
+		   /* HIDE TABLE2**/
 			var element1 = document.getElementById("tbl2");
 			var temp = element1.setAttribute("hidden","hidden");
-
-			document.getElementById("demo").innerHTML = ""
 			document.getElementById("nameRaymond").innerHTML = "";
-			
-		   }
-		if(listValue == "JavaScript Text manipulation"){
-				document.getElementById("demo").innerHTML = "";
-				document.getElementById("nameRaymond").innerHTML = "Raymond King Usman";
-				
-				document.getElementById("pic1").setAttribute("src","");
-				document.getElementById("pic1").setAttribute("height","0");
-				document.getElementById("pic1").setAttribute("width","0");
-				/* SHOW TABLE2**/
+		   }else{
+			   /* SHOW TABLE2**/
 				var element1 = document.getElementById("tbl2");
 				var temp = element1.removeAttribute("hidden");
-
-				document.getElementById("demo").innerHTML = "";
+			   document.getElementById("nameRaymond").innerHTML = "Raymond King Usman";
+		   }
+	}
+		
+	function JSloop(hidshow){
+		if(hidshow == 'hide'){
+			/* HIDE PYRAMID INPUT**/
+			var element1 = document.getElementById("pyramidInput");
+			var temp = element1.setAttribute("hidden","hidden");
+		}else{
+			/* SHOW PYRAMID INPUT**/
+			var element1 = document.getElementById("pyramidInput");
+			var temp = element1.removeAttribute("hidden");
+		}
+		
+	}
+		
+	function changeSelect(txtSelect){
+		var listValue = txtSelect.options[txtSelect.selectedIndex].text;
+		document.getElementById("demo").innerHTML = ""
+		
+		if( listValue == "Curriculum Vitae"){
+		   	CV('show');
+			JStxtM('hide');
+			JSloop('hide');
+			
+		}else if(listValue == "JavaScript Text manipulation"){
+			JStxtM('show');
+			CV('hide');
+			JSloop('hide');
 					
+		}else if(listValue == "JavaScript Loopings"){
+			JSloop('show');
+			CV('hide');
+			JStxtM('hide');
+			
 			}
 		
 	}
-	/*function CVselect() {
-	  	 document.getElementById("pic1").setAttribute("src","CV.jpg");
-		 document.getElementById("pic1").setAttribute("height","700");
-		 document.getElementById("pic1").setAttribute("width","500");
-		/* HIDE TABLE2**//*
-		 var element1 = document.getElementById("tbl2");
-    	 var temp = element1.setAttribute("hidden","hidden");
-		 
-		document.getElementById("demo").innerHTML = ""
-		document.getElementById("nameRaymond").innerHTML = "";
-	}
-	function NameSelect() {
-		 document.getElementById("demo").innerHTML = "";
-		document.getElementById("nameRaymond").innerHTML = "Raymond King Usman";
-		 const opts1 = document.getElementById("opt2") 
-		 var temp = opts1.getAttribute("value");
-	  	 document.getElementById("pic1").setAttribute("src","");
-		 document.getElementById("pic1").setAttribute("height","0");
-		 document.getElementById("pic1").setAttribute("width","0");
-		/* SHOW TABLE2**//*
-		 var element1 = document.getElementById("tbl2");
-    	 var temp = element1.removeAttribute("hidden");
-		
-		 document.getElementById("demo").innerHTML = "";
-	  
-	}**/
 		function changeColor(colorText){
 			document.getElementById("nameRaymond").style.color = colorText;
-			/* this is just a TEST
-			const colorSet = ["red", "blue", "yellow", "green"];
-			for (let i = 0; i < colorSet.length; i++) {
-				if(colorSet[i] = colorText){
-					document.getElementById("nameRaymond").style.color = colorSet[i];
-					i = colorSet.length++;
-				}
-			}*/
-
 		}
 		
 		function changeSize(txtSize){
 			var listValue = txtSize.options[txtSize.selectedIndex].text;
   			document.getElementById("nameRaymond").style.fontSize = listValue;
-			
+		
 		}
+		
+		
 		
 		function changeText() {
 		  var temp = document.getElementById("myText").value;
 		  document.getElementById("nameRaymond").innerHTML = temp;
+		}
+		
+		function buildPyramid(){
+			var pyramidH = "";
+			var spaces = document.getElementById("heightInput").value;
+			var controlSpace = spaces;
+			if(spaces > 50){ 
+				alert("SORRY!!! Pyramid cannot exced height of morethan 50.");
+			}else{
+				for (var h = 1; h <= spaces; h++) {
+					pyramidInput
+
+					for(var spaceL = 0; spaceL < controlSpace; spaceL++){	  
+						pyramidH = pyramidH + " ";
+					}
+
+					for(var l = 1; l <= h; l++){
+						pyramidH = pyramidH + "* ";
+					}
+					pyramidH = pyramidH + "<br>";
+					controlSpace--;
+				}
+
+			}
+			/* BUILD THE PYRAMID */
+			document.getElementById("demo").innerHTML = pyramidH;  
 		}
 		
 		function DEMO(){
@@ -145,8 +164,8 @@
 			<select style="width: 100%;" id="mySelect" size="5" onchange="changeSelect(this);">
 				
 			  <option>Curriculum Vitae</option>
-			  <option> JavaScript Text manipulation</option>
-			  <option>option</option>
+			  <option>JavaScript Text manipulation</option>
+			  <option>JavaScript Loopings</option>
 			  <option>option</option>
 			  <option>option</option>
 			</select>
@@ -154,10 +173,15 @@
 		  
         <p id="demo3" onClick="DEMO()">COLUMN1</p>
 		  
-        <button id="demo2" type="button" onclick="myFunction2()" class="btn btn-sm">Small Button</button>
+        <button id="demo2" type="button"  class="btn btn-sm">Small Button</button>
         <p>&nbsp;</p>
-        <p>&nbsp;</p></td>
+        <p>&nbsp;</p>
+		
+		</td>
 		<td align="center" valign="top">
+			<!-- PYRAMID INPUT-->
+			<p id="pyramidInput" hidden="hidden">Enter Pyramid Height :<input id="heightInput" type="text" value=""><input onClick="buildPyramid()" type="button" value="Build"></p>
+			<!-- COLUMN 2 TEXT -->
 			<p id="demo"> COLUMN2</p>
 			<img id="pic1" >
 			<!-- NAME TEXT -->
