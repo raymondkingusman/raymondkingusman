@@ -50,6 +50,17 @@
 			   document.getElementById("nameRaymond").innerHTML = "Raymond King Usman";
 		   }
 	}
+	function tblLogin(hidshow){
+		if(hidshow == "hide"){
+		   /* HIDE TABLE3**/
+			var element1 = document.getElementById("tbl3");
+			var temp = element1.setAttribute("hidden","hidden");
+		   }else{
+			   /* SHOW TABLE3**/
+				var element1 = document.getElementById("tbl3");
+				var temp = element1.removeAttribute("hidden");
+		   }
+	}
 		
 	function JSloop(hidshow){
 		if(hidshow == 'hide'){
@@ -72,14 +83,22 @@
 		   	CV('show');
 			JStxtM('hide');
 			JSloop('hide');
+			tblLogin('hide');
 			
 		}else if(listValue == "JavaScript Text manipulation"){
 			JStxtM('show');
 			CV('hide');
 			JSloop('hide');
+			tblLogin('hide');
 					
 		}else if(listValue == "JavaScript Loopings"){
 			JSloop('show');
+			CV('hide');
+			JStxtM('hide');
+			tblLogin('hide');
+		}else if(listValue == "Login"){
+			tblLogin('show');
+			JSloop('hide');
 			CV('hide');
 			JStxtM('hide');
 			
@@ -129,6 +148,27 @@
 			document.getElementById("demo").innerHTML = pyramidH;  
 		}
 		
+		function login(){
+			document.getElementById("demo").innerHTML = ""
+			CV('hide');
+			JStxtM('hide');
+			JSloop('hide');
+			var UserName = document.getElementById("txtUser").value;
+			var Pass = document.getElementById("txtPass").value;
+			
+			if(UserName == "admin"){
+				if(Pass == "1234"){
+					alert("LOGIN");
+					tblLogin('hide');
+				}else{
+					alert("Incorrect password");
+				}
+			}else{
+				alert("Incorrect username");
+			}
+			
+		}
+		
 		function DEMO(){
 			var temp = "yy";
 			document.getElementById("demo").innerHTML="";
@@ -166,7 +206,7 @@
 			  <option>Curriculum Vitae</option>
 			  <option>JavaScript Text manipulation</option>
 			  <option>JavaScript Loopings</option>
-			  <option>option</option>
+			  <option>Login</option>
 			  <option>option</option>
 			</select>
 		</form> <!-- OPTION 1 END-->
@@ -180,7 +220,7 @@
 		</td>
 		<td align="center" valign="top">
 			<!-- PYRAMID INPUT-->
-			<p id="pyramidInput" hidden="hidden">Enter Pyramid Height :<input id="heightInput" type="text" value=""><input onClick="buildPyramid()" type="button" value="Build"></p>
+			<p id="pyramidInput" hidden="hidden">Enter Pyramid Height :<input id="heightInput" minlength="2" type="text" value=""><input onClick="buildPyramid()" type="button" value="Build"></p>
 			<!-- COLUMN 2 TEXT -->
 			<p id="demo"> COLUMN2</p>
 			<img id="pic1" >
@@ -223,7 +263,46 @@
 					</th>
 				</tr>
 			</table>
+			<!-- TABLE 3 ------------------------->
+			<table id="tbl3" border="1" align="left" hidden="hidden">
+			  <tbody>
+				<tr>
+				  <th align="middle">
+					  	user="admin" pass="1234"
+					  <br>
+						Usename : <input type="text" id="txtUser" value="">
+						<br><br>
+						Password : <input type="password" id="txtPass" value="">
+					  	<br><br>
+					  	<button onClick="login()" >Log in</button>
+					</th>
+				</tr>
+			  </tbody>
+			</table>
 			
+			<!--   ---------------------------->
+			<div id="div1">
+				<form id="frm1">
+					First Name :<input name="regForm" type="text">
+					<br>
+					Middle Name :<input name="regForm" type="text">
+					<br>
+					Last Name :<input name="regForm" type="text">
+				</form>
+				<form id="frm2">
+					Birth Date :<input name="regForm" type="date" id="birthday">
+					<br>
+					Gender :
+					  <label>
+					       <input type="radio" name="RadioGroup1" value="Male" id="RadioGroup1_0">
+					  Male</label>
+					  <label>
+					    <input type="radio" name="RadioGroup1" value="Female" id="RadioGroup1_1">
+					    Female</label>
+					  <br>
+					Address :<input name="regForm" type="text">
+				</form>
+			</div>
 		</td>
     </tr>
   </table>
