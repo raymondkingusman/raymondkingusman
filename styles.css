@@ -34,6 +34,7 @@ div[id=div1] {
   background-color: lightpink;
   padding: 20px;
 	align: left;
+	
 }
 form[id=frm1]{
 	width: 50%;
@@ -46,5 +47,8 @@ form[id=frm2]{
 	text-align:left;
 	background-color: cornflowerblue;
 	margin-left: 0;
+}
+.section1{
+    background-image: url(images/mountains.jpg);
 }
 

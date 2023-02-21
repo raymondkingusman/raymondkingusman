@@ -12,8 +12,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- JAVASCRIPT FUNCTION ------------------------------------->
-	<script>
 	
+	<script>	
+		
 	function myFunction2() {
 		if(document.getElementById("demo").getAttribute= "COLUMN2"){
 	  		document.getElementById("demo").innerHTML = "COLUMN255";
@@ -21,10 +22,10 @@
 			document.getElementById("demo").innerHTML = "COLUMN2";
 		}
 	}
-		
+	/** HIDE CV **/	
 	function CV(hidshow){
 		if(hidshow == "hide"){
-			/** HIDE CV **/
+			
 			document.getElementById("pic1").setAttribute("src","");
 			document.getElementById("pic1").setAttribute("height","0");
 			document.getElementById("pic1").setAttribute("width","0");
@@ -50,18 +51,21 @@
 			   document.getElementById("nameRaymond").innerHTML = "Raymond King Usman";
 		   }
 	}
+	/* **** Hide/Show LOGIN FORM*******************/
 	function tblLogin(hidshow){
+		
 		if(hidshow == "hide"){
-		   /* HIDE TABLE3**/
+		   /* HIDE LOGIN**/
 			var element1 = document.getElementById("tbl3");
 			var temp = element1.setAttribute("hidden","hidden");
 		   }else{
-			   /* SHOW TABLE3**/
+			   /* SHOW LOGIN**/
 				var element1 = document.getElementById("tbl3");
 				var temp = element1.removeAttribute("hidden");
+			   
 		   }
 	}
-		
+	/* ***********Hide/Show PYRAMID FORM**************/	
 	function JSloop(hidshow){
 		if(hidshow == 'hide'){
 			/* HIDE PYRAMID INPUT**/
@@ -74,35 +78,57 @@
 		}
 		
 	}
+	/* ******Hide/Show REGISTRATION FORM ***************/
+	function regForm(hidShow){
+		var temp = document.getElementById("div1");
+		/* HIDE REGISTRATION FORM*/
+		if (hidShow == "hide") {
+			temp.style.display = "none";
+			var element1 = document.getElementById("regButtons");
+			var temp = element1.setAttribute("hidden","hidden");
+			
+			/* SHOW REGISTRATION FORM*/
+		} else {
+			temp.style.display = "block";
+			var element1 = document.getElementById("regButtons");
+			var temp = element1.removeAttribute("hidden");
+		}
+	}
+	/******** Hide/Show DOG PHOTO BLOG FORM***************/
+	function DogBlog(hidShow){
+		var temp = document.getElementById("DogPhotoBlog");
+		/* SHOW FORM*/
+		if (hidShow == "hide") {
+			temp.style.display = "none";
+			
+			/* SHOW  FORM*/
+		} else {
+			temp.style.display = "block";
+		}
+	}
 		
 	function changeSelect(txtSelect){
+		regForm('hide');
+		
 		var listValue = txtSelect.options[txtSelect.selectedIndex].text;
 		document.getElementById("demo").innerHTML = ""
+		CV('hide');
+		JStxtM('hide');
+		JSloop('hide');
+		tblLogin('hide');
+		DogBlog('hide')
 		
 		if( listValue == "Curriculum Vitae"){
-		   	CV('show');
-			JStxtM('hide');
-			JSloop('hide');
-			tblLogin('hide');
-			
+		   	CV('show');			
 		}else if(listValue == "JavaScript Text manipulation"){
-			JStxtM('show');
-			CV('hide');
-			JSloop('hide');
-			tblLogin('hide');
-					
+			JStxtM('show');					
 		}else if(listValue == "JavaScript Loopings"){
 			JSloop('show');
-			CV('hide');
-			JStxtM('hide');
-			tblLogin('hide');
 		}else if(listValue == "Login"){
 			tblLogin('show');
-			JSloop('hide');
-			CV('hide');
-			JStxtM('hide');
-			
-			}
+		}else if(listValue == "DOG PHOTO BLOG"){
+			DogBlog('show');
+		}
 		
 	}
 		function changeColor(colorText){
@@ -114,9 +140,7 @@
   			document.getElementById("nameRaymond").style.fontSize = listValue;
 		
 		}
-		
-		
-		
+
 		function changeText() {
 		  var temp = document.getElementById("myText").value;
 		  document.getElementById("nameRaymond").innerHTML = temp;
@@ -148,6 +172,7 @@
 			document.getElementById("demo").innerHTML = pyramidH;  
 		}
 		
+		/************* LOGIN FUNCTION *********************/
 		function login(){
 			document.getElementById("demo").innerHTML = ""
 			CV('hide');
@@ -160,6 +185,7 @@
 				if(Pass == "1234"){
 					alert("LOGIN");
 					tblLogin('hide');
+					regForm('show');
 				}else{
 					alert("Incorrect password");
 				}
@@ -167,6 +193,10 @@
 				alert("Incorrect username");
 			}
 			
+		}
+		
+		function functionReg(){
+			alert("FORM NOT AVAIBLE!!!");
 		}
 		
 		function DEMO(){
@@ -207,7 +237,7 @@
 			  <option>JavaScript Text manipulation</option>
 			  <option>JavaScript Loopings</option>
 			  <option>Login</option>
-			  <option>option</option>
+			  <option>DOG PHOTO BLOG</option>
 			</select>
 		</form> <!-- OPTION 1 END-->
 		  
@@ -220,7 +250,20 @@
 		</td>
 		<td align="center" valign="top">
 			<!-- PYRAMID INPUT-->
-			<p id="pyramidInput" hidden="hidden">Enter Pyramid Height :<input id="heightInput" minlength="2" type="text" value=""><input onClick="buildPyramid()" type="button" value="Build"></p>
+			<p id="pyramidInput" hidden="hidden">
+				Enter Pyramid Height :
+				<input 
+					   id="heightInput" 
+					   minlength="2" 
+					   type="text" 
+					   value=""
+					   >
+				<input 
+					   onClick="buildPyramid()" 
+					   type="button" 
+					   value="Build"
+					   >
+			</p>
 			<!-- COLUMN 2 TEXT -->
 			<p id="demo"> COLUMN2</p>
 			<img id="pic1" >
@@ -264,6 +307,7 @@
 				</tr>
 			</table>
 			<!-- TABLE 3 ------------------------->
+			<!--  LOG IN FORM ------------------->
 			<table id="tbl3" border="1" align="left" hidden="hidden">
 			  <tbody>
 				<tr>
@@ -280,8 +324,8 @@
 			  </tbody>
 			</table>
 			
-			<!--   ---------------------------->
-			<div id="div1">
+			<!-- REGISTRATION FORM  ---------------------------->
+			<div id="div1" style="display: none">
 				<form id="frm1">
 					First Name :<input name="regForm" type="text">
 					<br>
@@ -302,9 +346,103 @@
 					  <br>
 					Address :<input name="regForm" type="text">
 				</form>
+				
 			</div>
+			<p id="regButtons" hidden="hidden">
+				<button onClick="regForm('hide')">Back</button>
+				<button onClick="functionReg()">Done</button>
+			</p>
+<!------------------- START DOG PHOT BLOG--------------------------------------------------->
+			
+			<div id="DogPhotoBlog" style="display: none">
+			<!----------------------------------HEAD SECTION--------------------------------->
+			<h1> Dog Photo Blog</h1>
+
+			<!----------------------------------END OF HEAD SECTION-->
+
+			<!----------------------------------MAIN SECTION---------------------------------->
+			<main>
+				<!--ABOUT SECTION-------------------->
+				<section class="section1">
+					<h2>Dog Photos</h2>
+					<p>Click here to view more <a href="#" target="_blank">Dog Photos</a></p>
+					<figure>
+						<img src="images/dog1.jpg" alt="sample dog" width="400px" height="400px">
+					</figure>
+
+				</section>
+				<!--FEATURE SECTION-------------------->
+				<section>
+					<h2> List </h2>
+					<h3> Things Dogs Love: </h3>
+					<ul>
+						<li>Seeing their human </li>
+						<li>Dog Treats </li>
+						<li>Dog Toys</li>
+					</ul>
+					<figure>
+						<img src="images/dog2.jpg" alt="sample dog" width="400px" height="400px">
+						<figcaption>My Dog is a <em>Captain</em></figcaption>
+					</figure>
+					<h3> Three Things Dogs hate:</h3>
+					<ol>
+						<li>Cats</li>
+						<li>Taking a Bath</li>
+						<li>Medicine</li>
+					</ol>
+					<figure>
+						<img src="https://www.gannett-cdn.com/presto/2020/03/17/USAT/2dc95dad-68aa-4ced-9cb5-7f712f9c52bf-AFP_AFP_1OW2K0.JPG?width=592&format=pjpg&auto=webp&quality=70"
+							alt="cute dog from the web">
+						<figcaption>Dogs <strong>Love</strong> their Human</figcaption>
+					</figure>
+				</section>
+
+
+				<!--FORM SECTION --------------------->
+				<section>
+					<h2>Dog Form</h2>
+					<form action="#">
+						<fieldset>
+							<legend>Is your dog and indoor dog or outdoor dog?</legend>
+							<label>
+								<input id="indoor" type="radio" name="nameIndoor" checked />
+								Indoor
+							</label>
+
+							<label>
+								<input id="outdoor" type="radio" name="nameOutdoor" />
+								Outdoor
+							</label>
+						</fieldset>
+
+						<fieldset>
+							<legend>What is your dog personality?</legend>
+							<input id="chkbox1" value="love" type="checkbox" name="personality" checked><label
+								for="chkbox1">Loving</label>
+							<input id="chkbox2" value="lazy" type="checkbox" name="personality"><label
+								for="chkbox2">Lazy</label>
+							<input id="chkbox3" value="energy" type="checkbox" name="personality"><label
+								for="chkbox3">Energitic</label>
+						</fieldset>
+
+						<fieldset>
+							<input type="text" name="cuteDogs1" placeholder="cute dogs URL" required>
+							<button type="submit">submit</button>
+						</fieldset>
+					</form>
+				</section>
+			</main>
+			<!----------------------------------END OF MAIN SECTION-->
+
+			<!----------------------------------FOOTER SECTION---------------------------------->
+			<footer>
+				<p>Copyright 2023</p>
+			</footer>
+		</div>
+			<!--------END OF DOG PHOTO BLOG----------->
 		</td>
     </tr>
   </table>
+	
 </body>
 </html>
