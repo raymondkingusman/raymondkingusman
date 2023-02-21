@@ -51,4 +51,55 @@ form[id=frm2]{
 .section1{
     background-image: url(images/mountains.jpg);
 }
+/* CSS Style Of RESUME */
 
+fieldset[id=fieldset1] {
+
+  	border-radius: 5px;
+  	background-color:cadetblue;
+
+	margin-left: 90px;
+	width: 70%;
+	
+	
+}
+div[id=div2] {
+	width: 70%;
+  	border-radius: 5px;
+	
+}
+div[id=div3] {
+	float: right;
+	width: 30%;
+
+  	border-radius: 5px;
+  	background-color:blue;
+
+}
+img[id=imgID]{
+	float:left;
+	height: 150px;
+	width: 150px;
+	
+}
+.nameResume{
+	font-size: 30px;
+}
+.resumeF1{
+	border: none;
+}
+.abp{
+	padding-left: 30px;
+	font-weight: lighter;
+}
+.fieldEdu1{
+	float:left;
+	border: none;
+	text-align: center;
+	font-weight: bold;
+}
+.fieldEdu2{
+	border: none;
+	text-align: left;
+	font-weight: bold;
+}

@@ -25,27 +25,24 @@
 	/** HIDE CV **/	
 	function CV(hidshow){
 		if(hidshow == "hide"){
-			
-			document.getElementById("pic1").setAttribute("src","");
-			document.getElementById("pic1").setAttribute("height","0");
-			document.getElementById("pic1").setAttribute("width","0");
+			var element1 = document.getElementById("fieldset1");
+			var temp = element1.setAttribute("hidden","hidden");
 		   }else{
 				/** SHOW CV **/
-				document.getElementById("pic1").setAttribute("src","CV.jpg");
-				document.getElementById("pic1").setAttribute("height","700");
-				document.getElementById("pic1").setAttribute("width","500");
+				var element1 = document.getElementById("fieldset1");
+				var temp = element1.removeAttribute("hidden");
 		   }
 		
 	}
 		
 	function JStxtM(hidshow){
 		if(hidshow == "hide"){
-		   /* HIDE TABLE2**/
+		   /* HIDE TEXT MANIPULATION FORM**/
 			var element1 = document.getElementById("tbl2");
 			var temp = element1.setAttribute("hidden","hidden");
 			document.getElementById("nameRaymond").innerHTML = "";
 		   }else{
-			   /* SHOW TABLE2**/
+			   /* SHOW TEXT MANIPULATION FORM**/
 				var element1 = document.getElementById("tbl2");
 				var temp = element1.removeAttribute("hidden");
 			   document.getElementById("nameRaymond").innerHTML = "Raymond King Usman";
@@ -118,7 +115,7 @@
 		tblLogin('hide');
 		DogBlog('hide')
 		
-		if( listValue == "Curriculum Vitae"){
+		if( listValue == "RESUME"){
 		   	CV('show');			
 		}else if(listValue == "JavaScript Text manipulation"){
 			JStxtM('show');					
@@ -233,7 +230,7 @@
 		<form> <!-- OPTION 1 Start-->
 			<select style="width: 100%;" id="mySelect" size="5" onchange="changeSelect(this);">
 				
-			  <option>Curriculum Vitae</option>
+			  <option>RESUME</option>
 			  <option>JavaScript Text manipulation</option>
 			  <option>JavaScript Loopings</option>
 			  <option>Login</option>
@@ -266,7 +263,64 @@
 			</p>
 			<!-- COLUMN 2 TEXT -->
 			<p id="demo"> COLUMN2</p>
-			<img id="pic1" >
+			<!------ RESUME------------------------------------------------------------>
+			<fieldset id="fieldset1" hidden="hidden">
+				<div id="div2">
+					<fieldset class="resumeF1">
+						<img id="imgID" src="images/ID picture.png" alt="">
+						<p class="resume1">
+							<h2>Raymond King L. Usman</h2>
+							I am a Graduate of Information Technology at STI, and a self taught
+							Web/App Developer.<br><br>
+							I'm always ready to learn new skills and a fast learner.			
+			
+						</p>
+					</fieldset>
+					<hr><hr>
+					<h2>SUMMARY</h2>
+					Goal-driven Web Developer successful at applying technical skills 
+					to create website that informs and engages customers. Collaborative 
+					team player with an eye for detail. Graduated professional with 
+					software development project experience. Focused, results-driven 
+					and knowledgeable in multiple computer languages. Seeking an 
+					opportunity to enhance various software packages. Substantial 
+					knowledge in designing features and developing user interface. 
+					Works hard to use best technology practices and innovative methods 
+					in developing software. Always ready to learn new things and learn 
+					fast.
+					<h2>SKILLS & ABILITIES<hr></h2>
+					HTML,CSS,JAVASCRIPT,PHP,MYSQL,JAVA,VB.NET,C++,Unity,Photoshop
+					<h2>EXPERIENCE<hr></h2>
+					<fieldset class="fieldEdu1">
+						2015 up to present<br><br><br><br><br>
+						2019 up to 2022 January<br><br><br><br><br>
+						2011 up to 2012
+					</fieldset>
+					<fieldset class="fieldEdu2">
+						Freelance Web Development
+						<p class="abp">Freelancing on Onlinejobs.ph. Using HTML,CSS,<br>JAVASCRIPT,PHP and MySQL for databasing.</p>
+						Graphic Artist
+						<p class="abp">Using photoshop to crop and enhance the image<br>of pet/human and put into a canvas.</p>
+						TESDA Programming Instructor
+						<p class="abp">Teaching basic programming skills and different<br>programming languages.</p>
+					</fieldset>
+					<br>
+					<h2>EDUCATION<hr></h2>
+				<fieldset class="fieldEdu1">
+					2008 to 2010 <br><br>
+					June 2010<br><br>
+					July 2010<br><br>
+					July 2010<br><br>
+				</fieldset>
+				<fieldset class="fieldEdu2">
+					Diploma of Information Technology (STI)<br><br>
+					Programming NC4 (TESDA)<br><br>
+					Trainers and Assesors Methology 1Course(TESDA)<br><br>
+					National TVET Trainors and Assesors Level 1(TESDA)<br><br>
+				</fieldset>
+				</div>
+				
+			</fieldset>
 			<!-- NAME TEXT -->
 			<p id="nameRaymond" ></p>
 			<!-- TABLE 2 ----------------------------------->
