@@ -54,14 +54,10 @@ form[id=frm2]{
 /* CSS Style Of RESUME */
 
 fieldset[id=fieldset1] {
-
   	border-radius: 5px;
   	background-color:cadetblue;
-
 	margin-left: 90px;
-	width: 70%;
-	
-	
+	width: 70%;	
 }
 div[id=div2] {
 	width: 70%;
