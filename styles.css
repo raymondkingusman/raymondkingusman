@@ -51,13 +51,13 @@ form[id=frm2]{
 .section1{
     background-image: url(images/mountains.jpg);
 }
-/* CSS Style Of RESUME */
+/************************ CSS Style Of RESUME ******************************/
 
 fieldset[id=fieldset1] {
   	border-radius: 5px;
   	background-color:cadetblue;
-	margin-left: 90px;
-	width: 70%;	
+	margin-left: 20px;
+	width: 85%;	
 }
 div[id=div2] {
 	width: 70%;
