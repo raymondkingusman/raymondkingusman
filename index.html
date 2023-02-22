@@ -103,6 +103,20 @@
 			temp.style.display = "block";
 		}
 	}
+	/* *********Hide/Show TEA SHOP MENU **********************/
+	function TeaShopForm(hidShow){
+		var temp = document.getElementById("TeaShopBody");
+		/* HIDE TEA SHOP MENU FORM*/
+		if (hidShow == "hide") {
+			var element1 = document.getElementById("TeaShopBody");
+			var temp = element1.setAttribute("hidden","hidden");
+			
+			/* SHOW TEA SHOP MENU FORM*/
+		} else {
+			var element1 = document.getElementById("TeaShopBody");
+			var temp = element1.removeAttribute("hidden");
+		}
+	}
 		
 	function changeSelect(txtSelect){
 		regForm('hide');
@@ -113,7 +127,8 @@
 		JStxtM('hide');
 		JSloop('hide');
 		tblLogin('hide');
-		DogBlog('hide')
+		DogBlog('hide');
+		TeaShopForm('hide');
 		
 		if( listValue == "RESUME"){
 		   	CV('show');			
@@ -125,6 +140,8 @@
 			tblLogin('show');
 		}else if(listValue == "DOG PHOTO BLOG"){
 			DogBlog('show');
+		}else if(listValue == "Tea Shop Menu"){
+			TeaShopForm('show');
 		}
 		
 	}
@@ -228,13 +245,14 @@
       <td width="20%" align="center" valign="top"> 
 		  
 		<form> <!-- OPTION 1 Start-->
-			<select style="width: 100%;" id="mySelect" size="5" onchange="changeSelect(this);">
+			<select style="width: 100%;" id="mySelect" size="6" onchange="changeSelect(this);">
 				
 			  <option>RESUME</option>
 			  <option>JavaScript Text manipulation</option>
 			  <option>JavaScript Loopings</option>
 			  <option>Login</option>
 			  <option>DOG PHOTO BLOG</option>
+			  <option>Tea Shop Menu</option>
 			</select>
 		</form> <!-- OPTION 1 END-->
 		  
@@ -362,11 +380,11 @@
 			</table>
 			<!-- TABLE 3 ------------------------->
 			<!--  LOG IN FORM ------------------->
-			<table id="tbl3" border="1" align="left" hidden="hidden">
+			<table id="tbl3" class="tblLogin" border="1" align="center" hidden="hidden">
 			  <tbody>
 				<tr>
 				  <th align="middle">
-					  	user="admin" pass="1234"
+					  	<p class="txtUserPass">user="admin" pass="1234"</p>
 					  <br>
 						Usename : <input type="text" id="txtUser" value="">
 						<br><br>
@@ -494,6 +512,72 @@
 			</footer>
 		</div>
 			<!--------END OF DOG PHOTO BLOG----------->
+
+		<!--------START OF TEA SHOP MENU FORM----------->
+		<fieldset id="TeaShopBody" class="TeaShopBody" hidden="hidden">
+			<div class="tea-menu">
+				<!--********************************** HEADER SECTION *********************************-->
+				<header>
+					<h1 id="txtTeaShop1" class="TeaShoptxt">RL Tea-shop</h1>
+					<p class="established">Serving you since 2023</p>
+				</header>
+				<hr class="top-line">
+		
+				<!--*********************************** MAIN SECTION *********************************-->
+				<main>
+					<!--SECTION1-->
+					<section>
+						<div class="tea-icon">
+							<h2 id="txtTeaShop2" class="TeaShoptxt">Tea</h2>
+							<img width="40px" height="40px" src="https://github.com/KodeGo-Bootcamp/HTML-Activity-Images/blob/main/rodrigoBonzerrLopez-tea-icon.png?raw=true" alt="tea-icon">
+							  
+						</div>
+						
+						<article class="tea-items">
+							<p class="tea-flavor">Aloe Tea</p><p class="tea-price">&#x20B1; 82.00</p>
+						</article>
+						<article class="tea-items">
+							<p class="tea-flavor">Apple Flower Tea</p><p class="tea-price">&#x20B1; 77.00</p>
+						</article>
+						<article class="tea-items">
+							<p class="tea-flavor">Assam Black Tea</p><p class="tea-price">&#x20B1; 110.00</p>
+						</article>
+						<article class="tea-items">
+							<p class="tea-flavor">Broken Orange Tea</p><p class="tea-price">&#x20B1; 83.00</p>
+						</article>
+						<article class="tea-items">
+							<p class="tea-flavor">Bitter Buckwheat Tea</p><p class="tea-price">&#x20B1; 109.00</p>
+						</article>
+					</section>
+					
+		
+					<!--SECTION2-->
+					<section>
+						<h2 class="TeaShoptxt">Tea Collections</h2>
+						<article class="tea-items">
+							<p class="collections-flavor">Black Tea</p><p class="collections-price">&#x20B1; 200</p>
+						</article>
+						<article class="tea-items">
+							<p class="collections-flavor">Green Tea</p><p class="collections-price">&#x20B1; 96</p>
+						</article>
+						<article class="tea-items">
+							<p class="collections-flavor">Oolong Tea</p><p class="collections-price">&#x20B1; 120</p>
+						</article>
+						<article class="tea-items">
+							<p class="collections-flavor">Puerh Tea</p><p class="collections-price">&#x20B1; 130</p>
+						</article>
+					</section>
+				</main>
+				<hr class="bottom-line">
+		
+				<!--*********************************** FOOTER SECTION *********************************-->
+				<footer>
+					<p class="TeaShoptxt"><a href="#">Visit our Website</a></p>
+					<p class="TeaShoptxt">0001 Marilao, Bulacan</p>
+				</footer>
+			</div>
+		</fieldset>
+		<!--------END OF TEA SHOP MENU FORM----------->
 		</td>
     </tr>
   </table>
