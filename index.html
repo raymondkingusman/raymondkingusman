@@ -14,14 +14,12 @@
 	<!-- JAVASCRIPT FUNCTION ------------------------------------->
 	
 	<script>	
-		
-	function myFunction2() {
-		if(document.getElementById("demo").getAttribute= "COLUMN2"){
-	  		document.getElementById("demo").innerHTML = "COLUMN255";
-		}else{
-			document.getElementById("demo").innerHTML = "COLUMN2";
-		}
-	}
+	/** REFRESH PAGE**/
+	function refreshPage(){
+		location.reload();
+	}	
+	var element1 = document.getElementById("portfolioForm");
+	var temp = element1.removeAttribute("hidden");
 	/** HIDE CV **/	
 	function CV(hidshow){
 		if(hidshow == "hide"){
@@ -59,6 +57,7 @@
 			   /* SHOW LOGIN**/
 				var element1 = document.getElementById("tbl3");
 				var temp = element1.removeAttribute("hidden");
+				
 			   
 		   }
 	}
@@ -119,10 +118,10 @@
 	}
 		
 	function changeSelect(txtSelect){
-		regForm('hide');
-		
 		var listValue = txtSelect.options[txtSelect.selectedIndex].text;
-		document.getElementById("demo").innerHTML = ""
+		var element1 = document.getElementById("portfolioForm");
+		var temp = element1.setAttribute("hidden","hidden");
+		regForm('hide');
 		CV('hide');
 		JStxtM('hide');
 		JSloop('hide');
@@ -188,10 +187,6 @@
 		
 		/************* LOGIN FUNCTION *********************/
 		function login(){
-			document.getElementById("demo").innerHTML = ""
-			CV('hide');
-			JStxtM('hide');
-			JSloop('hide');
 			var UserName = document.getElementById("txtUser").value;
 			var Pass = document.getElementById("txtPass").value;
 			
@@ -213,11 +208,6 @@
 			alert("FORM NOT AVAIBLE!!!");
 		}
 		
-		function DEMO(){
-			var temp = "yy";
-			document.getElementById("demo").innerHTML="";
-			
-		}
 	</script>
 	<!-- END OF JAVASCRIPT FUNCTION ------------------------------>
   <title>SAMPLE ONLY</title>
@@ -232,7 +222,7 @@
 		
 		  <table width="100%">
 		  	<tr >
-				<th>HOME </th>
+				<th class="refreshPage" onClick="refreshPage()">HOME</th>
 			  	<th>BLANK </th>
 				<th>BLANK </th>
 				<th>BLANK </th>
@@ -248,15 +238,13 @@
 			<select style="width: 100%;" id="mySelect" size="6" onchange="changeSelect(this);">
 				
 			  <option>RESUME</option>
-			  <option>JavaScript Text manipulation</option>
-			  <option>JavaScript Loopings</option>
 			  <option>Login</option>
 			  <option>DOG PHOTO BLOG</option>
 			  <option>Tea Shop Menu</option>
+			  <option>JavaScript Text manipulation</option>
+			  <option>JavaScript Loopings</option>
 			</select>
 		</form> <!-- OPTION 1 END-->
-		  
-        <p id="demo3" onClick="DEMO()">COLUMN1</p>
 		  
         <button id="demo2" type="button"  class="btn btn-sm">Small Button</button>
         <p>&nbsp;</p>
@@ -279,8 +267,24 @@
 					   value="Build"
 					   >
 			</p>
-			<!-- COLUMN 2 TEXT -->
-			<p id="demo"> COLUMN2</p>
+			<!--________--------------- PORTFOLIO PAGE -------------------------------------- -->
+			<fieldset class="portfolioForm" id="portfolioForm">
+				<p class="portHeader">PORTFOLIO</p>
+				<img src="images/portfolio image.jpg" class="portImg">
+				<p class="portText1">Web Developer
+					<span class="subTxt1">Able to deliver High Performance</span>
+					<span class="subTxt2">and User Friendly Website</span>
+				</p>
+				<p class="portText2">Motivated Web Developer with a good record</p>
+				<p class="portText3">progressive experience. Energetic self-starter and</p>
+				<p class="portText4">team builder. Navigates high-stress situations and</p> 
+				<p class="portText5">achieves goals on time and under pressure. Qualified</p>
+				<p class="portText6">Web Developer with expertise in troubleshooting</p>
+				<p class="portText7">software, detecting bugs and errors and using</p>
+				<p class="portText8">wireframe models. Sharp, dedicated and hard-</p>
+				<p class="portText9">working team player. Committed to going extra mile</p>
+				<p class="portText10">to meet deadlines.</p>
+			</fieldset>
 			<!------ RESUME------------------------------------------------------------>
 			<fieldset id="fieldset1" hidden="hidden">
 				<div id="div2">
@@ -378,7 +382,6 @@
 					</th>
 				</tr>
 			</table>
-			<!-- TABLE 3 ------------------------->
 			<!--  LOG IN FORM ------------------->
 			<table id="tbl3" class="tblLogin" border="1" align="center" hidden="hidden">
 			  <tbody>
@@ -399,14 +402,14 @@
 			<!-- REGISTRATION FORM  ---------------------------->
 			<div id="div1" style="display: none">
 				<form id="frm1">
-					First Name :<input name="regForm" type="text">
+					First Name :<input type="text">
 					<br>
-					Middle Name :<input name="regForm" type="text">
+					Middle Name :<input type="text">
 					<br>
-					Last Name :<input name="regForm" type="text">
+					Last Name :<input type="text">
 				</form>
 				<form id="frm2">
-					Birth Date :<input name="regForm" type="date" id="birthday">
+					Birth Date :<input type="date" id="birthday">
 					<br>
 					Gender :
 					  <label>
@@ -416,7 +419,7 @@
 					    <input type="radio" name="RadioGroup1" value="Female" id="RadioGroup1_1">
 					    Female</label>
 					  <br>
-					Address :<input name="regForm" type="text">
+					Address :<input type="text">
 				</form>
 				
 			</div>
@@ -439,29 +442,33 @@
 					<h2>Dog Photos</h2>
 					<p>Click here to view more <a href="#" target="_blank">Dog Photos</a></p>
 					<figure>
-						<img src="images/dog1.jpg" alt="sample dog" width="400px" height="400px">
+						<img src="images/dog1.jpg" alt="sample dog" width="300px" height="300px">
 					</figure>
 
 				</section>
 				<!--FEATURE SECTION-------------------->
 				<section>
-					<h2> List </h2>
-					<h3> Things Dogs Love: </h3>
-					<ul>
-						<li>Seeing their human </li>
-						<li>Dog Treats </li>
-						<li>Dog Toys</li>
-					</ul>
+					<fieldset style="width: 250px;">
+						<legend style="font-weight: bolder;">List</legend>
+						<h2> Things Dogs Love: </h2>
+						<ul>
+							<li>Seeing their human </li>
+							<li>Dog Treats </li>
+							<li>Dog Toys</li>
+						</ul>
+					</fieldset>
 					<figure>
-						<img src="images/dog2.jpg" alt="sample dog" width="400px" height="400px">
+						<img src="images/dog2.jpg" alt="sample dog" width="300px" height="300px">
 						<figcaption>My Dog is a <em>Captain</em></figcaption>
 					</figure>
-					<h3> Three Things Dogs hate:</h3>
-					<ol>
-						<li>Cats</li>
-						<li>Taking a Bath</li>
-						<li>Medicine</li>
-					</ol>
+					<div class="DogForm3">
+						<h3> Three Things Dogs hate:</h3>
+						<ol>
+							<li>Cats</li>
+							<li>Taking a Bath</li>
+							<li>Medicine</li>
+						</ol>
+					</div>
 					<figure>
 						<img src="https://www.gannett-cdn.com/presto/2020/03/17/USAT/2dc95dad-68aa-4ced-9cb5-7f712f9c52bf-AFP_AFP_1OW2K0.JPG?width=592&format=pjpg&auto=webp&quality=70"
 							alt="cute dog from the web">
