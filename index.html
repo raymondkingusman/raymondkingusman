@@ -76,24 +76,19 @@
 	}
 	/* ******Hide/Show REGISTRATION FORM ***************/
 	function regForm(hidShow){
-		var temp = document.getElementById("div1");
+		var temp = document.getElementById("registrationForm");
 		/* HIDE REGISTRATION FORM*/
 		if (hidShow == "hide") {
 			temp.style.display = "none";
-			var element1 = document.getElementById("regButtons");
-			var temp = element1.setAttribute("hidden","hidden");
-			
 			/* SHOW REGISTRATION FORM*/
 		} else {
-			temp.style.display = "block";
-			var element1 = document.getElementById("regButtons");
-			var temp = element1.removeAttribute("hidden");
+			temp.style.display = "grid";
 		}
 	}
 	/******** Hide/Show DOG PHOTO BLOG FORM***************/
 	function DogBlog(hidShow){
 		var temp = document.getElementById("DogPhotoBlog");
-		/* SHOW FORM*/
+		/* HIDE FORM*/
 		if (hidShow == "hide") {
 			temp.style.display = "none";
 			
@@ -116,6 +111,17 @@
 			var temp = element1.removeAttribute("hidden");
 		}
 	}
+	function GridForm(hidShow){
+		var temp = document.getElementById("grid");
+		/* HIDE Grid Form*/
+		if (hidShow == "hide") {
+			temp.style.display = "none";
+			
+			/* SHOW Grid FORM*/
+		} else {
+			temp.style.display = "grid";
+		}
+	}
 		
 	function changeSelect(txtSelect){
 		var listValue = txtSelect.options[txtSelect.selectedIndex].text;
@@ -128,6 +134,7 @@
 		tblLogin('hide');
 		DogBlog('hide');
 		TeaShopForm('hide');
+		GridForm('hide');
 		
 		if( listValue == "RESUME"){
 		   	CV('show');			
@@ -141,6 +148,8 @@
 			DogBlog('show');
 		}else if(listValue == "Tea Shop Menu"){
 			TeaShopForm('show');
+		}else if(listValue == "Grid Container"){
+			GridForm('show');
 		}
 		
 	}
@@ -215,7 +224,7 @@
 	
 <body>
 	<!-- MAIN TABLE-->
-  <table border="1" width="100%">
+  <table border="0" width="100%">
     <tr>
 		<!-- TOP MAIN TABLE -->
       <th colspan="2">
@@ -235,12 +244,13 @@
       <td width="20%" align="center" valign="top"> 
 		  
 		<form> <!-- OPTION 1 Start-->
-			<select style="width: 100%;" id="mySelect" size="6" onchange="changeSelect(this);">
+			<select style="width: 210px" id="mySelect" size="7" onchange="changeSelect(this);">
 				
 			  <option>RESUME</option>
 			  <option>Login</option>
 			  <option>DOG PHOTO BLOG</option>
 			  <option>Tea Shop Menu</option>
+			  <option>Grid Container</option>
 			  <option>JavaScript Text manipulation</option>
 			  <option>JavaScript Loopings</option>
 			</select>
@@ -251,7 +261,43 @@
         <p>&nbsp;</p>
 		
 		</td>
+<!--==============================================================================================================-->
 		<td align="center" valign="top">
+<!--==============================================================================================================-->	
+<!--============GRID FORM=======================-->
+<div id="grid" class="grid" style="display: none">
+	<div class="grid0">
+		grid 0
+	</div>
+	<div class="grid1">
+		grid 1
+	</div>
+	<div class="grid2">
+		grid 2
+	</div>
+	<div class="grid3">
+		grid 3
+	</div>
+	<div class="grid4">
+		grid 4
+	</div>
+	<div class="grid5">
+		grid 5
+	</div>
+	<div class="grid6">
+		grid 6
+	</div>
+	<div class="grid7">
+		grid 7
+	</div>
+	<div class="grid8">
+		grid 8
+	</div>
+	<div class="grid9">
+		grid 9
+	</div>
+</div>
+<!---------------END OF FRID FORM------------------------------------>		
 			<!-- PYRAMID INPUT-->
 			<p id="pyramidInput" hidden="hidden">
 				Enter Pyramid Height :
@@ -400,33 +446,35 @@
 			</table>
 			
 			<!-- REGISTRATION FORM  ---------------------------->
-			<div id="div1" style="display: none">
-				<form id="frm1">
-					First Name :<input type="text">
-					<br>
-					Middle Name :<input type="text">
-					<br>
-					Last Name :<input type="text">
-				</form>
-				<form id="frm2">
-					Birth Date :<input type="date" id="birthday">
-					<br>
-					Gender :
-					  <label>
-					       <input type="radio" name="RadioGroup1" value="Male" id="RadioGroup1_0">
-					  Male</label>
-					  <label>
-					    <input type="radio" name="RadioGroup1" value="Female" id="RadioGroup1_1">
-					    Female</label>
-					  <br>
-					Address :<input type="text">
-				</form>
-				
-			</div>
-			<p id="regButtons" hidden="hidden">
+			<div id="registrationForm" style="display: none">
+				<div class="regHeader">
+					REGISTRATION FORM
+				</div>
+				<div class="frm1">
+					<p class="txtReg1">First Name :</p>
+					<input type="text" class="txtRegForm1">
+					<p class="txtReg2">Middle Name :</p>
+					<input type="text" class="txtRegForm2">
+					<p class="txtReg3">Last Name :</p>
+					<input type="text" class="txtRegForm3">
+				</div>
+				<div class="frm2">
+					<p class="txtReg1">Birth Date :</p>
+					<input class="txtRegForm1" type="date" id="birthday">
+					<p class="txtReg2">Gender :</p>
+					<p class="txtRegForm2" >
+					<input type="radio" name="RadioGroup1" value="Male" id="RadioGroup1_0">Male
+					<input type="radio" name="RadioGroup1" value="Female" id="RadioGroup1_1">Female
+					</p>
+					<p class="txtReg3">Address :</p>
+					<input class="txtRegForm3" type="text">
+				</div>
+			<div class="regButtons">
 				<button onClick="regForm('hide')">Back</button>
 				<button onClick="functionReg()">Done</button>
-			</p>
+			</div>
+			</div>
+			
 <!------------------- START DOG PHOT BLOG--------------------------------------------------->
 			
 			<div id="DogPhotoBlog" style="display: none">

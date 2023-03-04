@@ -6,9 +6,40 @@ style1 {
     background-color: lightcyan;
     cursor: context-menu;
 }
+/*==========GRID SYSTEM===============*/
+.grid {
+    display: grid;
+    grid-template-areas:
+      'header header header header header'
+      'menu main main right right'
+      'menu footer footer footer footer'
+      'item1 item2 item3 item4 item5';
+    gap: 2px;
+    background-color: #2196F3;
+    padding: 2px;
+    width: 600px;
+  }
+  .grid0,.grid1,.grid2,.grid3,.grid4,.grid5,.grid6,.grid7,.grid8,.grid9{
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+  }
+  .grid0 { grid-area: header; }
+  .grid1 { grid-area: menu; }
+  .grid2 { grid-area: main; }
+  .grid3 { grid-area: right; }
+  .grid4 { grid-area: footer; }
+  .grid5 { grid-area: item1; }
+  .grid6 { grid-area: item2; }
+  .grid7 { grid-area: item3; }
+  .grid8 { grid-area: item4; }
+  .grid9 { grid-area: item5; }
+  /*==========END GRID SYSTEM===============*/
 /*========================PORTFOLIO==================*/
 .portfolioForm{
     background-color: lightyellow;
+	width: 1000px;
 }
 .portImg{
     margin-top: 0px;
@@ -108,37 +139,91 @@ input[id=none]:hover {
   background-color: #45a049;
 }
 
-div[id=div1] {
-	display: flex;
-  border-radius: 5px;
-  background-color: lightpink;
-  padding: 20px;
-	box-align: left;
-	
-}
 /*------DOG BLOG START-------------------*/
 .DogForm3{
     width: 250px;
     border-radius: 10px;
     background-color: lightpink;
 }
-/*===================DOG BLOG END==================================*/
-/* ------REGISTRATION FORM-------------- */
-form[id=frm1]{
-
-	width: 400px;
-	text-align:left;
-	background-color: cornflowerblue;
-}
-form[id=frm2]{
-
-	width: 400px;
-	text-align:left;
-	background-color: cornflowerblue;
-}
 .section1{
     background-image: url(images/mountains.jpg);
 }
+/*===================DOG BLOG END==================================*/
+/* ------REGISTRATION FORM-------------- */
+div[id=registrationForm]{
+	display: grid;
+    grid-template-areas:
+	'grid0 grid0'
+    'grid1 grid2'
+	'grid1 grid2'
+	'grid1 grid2'
+    'grid3 grid3';
+    gap: 50px;
+	padding: 50px;
+  border-radius: 5px;
+  background-color: lightpink;
+}
+.regHeader{
+	grid-area: grid0;
+	font-size: 30px;
+	font-weight: bold;
+}
+.frm1{
+	grid-area: grid1;
+	background-color: cornflowerblue;
+	display: grid;
+	grid-template-areas:
+	'l1 l2'
+	'l3 l4'
+	'l5 l6';
+    gap: 5px;
+	padding: 30px;
+}
+.txtReg1{ 
+	grid-area: l1;
+	text-align: right;
+}
+.txtReg2{ 
+	grid-area: l3;
+	text-align: right;
+}
+.txtReg3{ 
+	grid-area: l5; 
+	text-align: right;
+}
+.txtRegForm1{
+	grid-area: l2; 
+	height: 15px;
+	margin-top: 15px;
+}
+.txtRegForm2{ 
+	grid-area: l4; 
+	height: 15px;
+	margin-top: 15px;
+}
+.txtRegForm3{ 
+	grid-area: l6; 
+	height: 15px;
+	margin-top: 15px;
+}
+.frm2{
+	grid-area: grid2;
+	background-color: cornflowerblue;
+	display: grid;
+	grid-template-areas:
+	'l1 l2'
+	'l3 l4'
+	'l5 l6';
+    gap: 5px;
+	padding: 30px;
+}
+.regButtons{
+	grid-area: grid3;
+}
+.txtRegForm{
+	margin: auto;
+}
+
 /************************ CSS Style Of RESUME ******************************/
 
 fieldset[id=fieldset1] {
