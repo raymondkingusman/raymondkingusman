@@ -23,11 +23,11 @@
 	/** HIDE CV **/	
 	function CV(hidshow){
 		if(hidshow == "hide"){
-			var element1 = document.getElementById("fieldset1");
+			var element1 = document.getElementById("resumeForm");
 			var temp = element1.setAttribute("hidden","hidden");
 		   }else{
 				/** SHOW CV **/
-				var element1 = document.getElementById("fieldset1");
+				var element1 = document.getElementById("resumeForm");
 				var temp = element1.removeAttribute("hidden");
 		   }
 		
@@ -36,14 +36,14 @@
 	function JStxtM(hidshow){
 		if(hidshow == "hide"){
 		   /* HIDE TEXT MANIPULATION FORM**/
-			var element1 = document.getElementById("tbl2");
-			var temp = element1.setAttribute("hidden","hidden");
+			document.getElementById("tblJS").setAttribute("hidden","hidden");
+			document.getElementById("nameRaymond").setAttribute("hidden","hidden");
 			document.getElementById("nameRaymond").innerHTML = "";
 		   }else{
 			   /* SHOW TEXT MANIPULATION FORM**/
-				var element1 = document.getElementById("tbl2");
-				var temp = element1.removeAttribute("hidden");
-			   document.getElementById("nameRaymond").innerHTML = "Raymond King Usman";
+				document.getElementById("tblJS").removeAttribute("hidden");
+				document.getElementById("nameRaymond").removeAttribute("hidden");
+				document.getElementById("nameRaymond").innerHTML = "Raymond King Usman";
 		   }
 	}
 	/* **** Hide/Show LOGIN FORM*******************/
@@ -51,11 +51,11 @@
 		
 		if(hidshow == "hide"){
 		   /* HIDE LOGIN**/
-			var element1 = document.getElementById("tbl3");
+			var element1 = document.getElementById("tblLogin");
 			var temp = element1.setAttribute("hidden","hidden");
 		   }else{
 			   /* SHOW LOGIN**/
-				var element1 = document.getElementById("tbl3");
+				var element1 = document.getElementById("tblLogin");
 				var temp = element1.removeAttribute("hidden");
 				
 			   
@@ -63,14 +63,13 @@
 	}
 	/* ***********Hide/Show PYRAMID FORM**************/	
 	function JSloop(hidshow){
+		var temp = document.getElementById("pyramidInput");
 		if(hidshow == 'hide'){
 			/* HIDE PYRAMID INPUT**/
-			var element1 = document.getElementById("pyramidInput");
-			var temp = element1.setAttribute("hidden","hidden");
+			temp.style.display = "none";
 		}else{
 			/* SHOW PYRAMID INPUT**/
-			var element1 = document.getElementById("pyramidInput");
-			var temp = element1.removeAttribute("hidden");
+			temp.style.display = "block";
 		}
 		
 	}
@@ -191,7 +190,7 @@
 
 			}
 			/* BUILD THE PYRAMID */
-			document.getElementById("demo").innerHTML = pyramidH;  
+			document.getElementById("thePyramind").innerHTML = pyramidH;  
 		}
 		
 		/************* LOGIN FUNCTION *********************/
@@ -229,12 +228,12 @@
 		<!-- TOP MAIN TABLE -->
       <th colspan="2">
 		
-		  <table width="100%">
-		  	<tr >
+		  <table width="100%" height="70">
+		  	<tr style="background-color: #ccfff2;">
 				<th class="refreshPage" onClick="refreshPage()">HOME</th>
-			  	<th>BLANK </th>
-				<th>BLANK </th>
-				<th>BLANK </th>
+			  	<th class="stillBlank">BLANK </th>
+				<th class="stillBlank">BLANK </th>
+				<th class="stillBlank">BLANK </th>
 			  </tr>
 		  </table>
 	</th>
@@ -297,9 +296,9 @@
 		grid 9
 	</div>
 </div>
-<!---------------END OF FRID FORM------------------------------------>		
-			<!-- PYRAMID INPUT-->
-			<p id="pyramidInput" hidden="hidden">
+<!---------------END OF GRID FORM------------------------------------>		
+<!--------------------- PYRAMID FORM---------------------------->
+			<div id="pyramidInput" style="display: none;">
 				Enter Pyramid Height :
 				<input 
 					   id="heightInput" 
@@ -312,7 +311,10 @@
 					   type="button" 
 					   value="Build"
 					   >
-			</p>
+			
+				<p id="thePyramind"></p>
+			</div>
+<!--==================END of PYRAMID FORM ==================================-->
 			<!--________--------------- PORTFOLIO PAGE -------------------------------------- -->
 			<fieldset class="portfolioForm" id="portfolioForm">
 				<p class="portHeader">PORTFOLIO</p>
@@ -331,8 +333,8 @@
 				<p class="portText9">working team player. Committed to going extra mile</p>
 				<p class="portText10">to meet deadlines.</p>
 			</fieldset>
-			<!------ RESUME------------------------------------------------------------>
-			<fieldset id="fieldset1" hidden="hidden">
+<!--------------------------START RESUME------------------------------------------------------------>
+			<fieldset id="resumeForm" hidden="hidden">
 				<div id="div2">
 					<fieldset class="resumeF1">
 						<img id="imgID" src="images/ID picture.png" alt="">
@@ -389,12 +391,13 @@
 				</div>
 				
 			</fieldset>
-			<!-- NAME TEXT -->
-			<p id="nameRaymond" ></p>
-			<!-- TABLE 2 ----------------------------------->
-			<table id="tbl2" border="0" width="100%" align="left" vspace="top" hidden="hidden">
+<!-------------------- JAVASCRIPT text manipulitaion----------------------------------->
+			
+<p id="nameRaymond" hidden="hidden"></p>
+			<table id="tblJS" border="0" width="100%" align="left" vspace="top" hidden="hidden">
 				<tr>
 					<th align="left" width="30%">
+						
 						<h1>Select Color</h1>
 						
 						<p name="ccolor" onClick="changeColor('red')" style="color:red">RED</p>
@@ -429,7 +432,7 @@
 				</tr>
 			</table>
 			<!--  LOG IN FORM ------------------->
-			<table id="tbl3" class="tblLogin" border="1" align="center" hidden="hidden">
+			<table id="tblLogin" class="tblLogin" hidden="hidden">
 			  <tbody>
 				<tr>
 				  <th align="middle">
@@ -445,7 +448,7 @@
 			  </tbody>
 			</table>
 			
-			<!-- REGISTRATION FORM  ---------------------------->
+<!------------------------------ REGISTRATION FORM  ---------------------------->
 			<div id="registrationForm" style="display: none">
 				<div class="regHeader">
 					REGISTRATION FORM
@@ -568,7 +571,7 @@
 		</div>
 			<!--------END OF DOG PHOTO BLOG----------->
 
-		<!--------START OF TEA SHOP MENU FORM----------->
+<!-----------------------------START OF TEA SHOP MENU FORM------------------------->
 		<fieldset id="TeaShopBody" class="TeaShopBody" hidden="hidden">
 			<div class="tea-menu">
 				<!--********************************** HEADER SECTION *********************************-->
