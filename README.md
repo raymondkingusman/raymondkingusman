@@ -1,12 +1,12 @@
 # Mini Project 1
-##Technology Used:
+## Technology Used:
   *HTML
   *CSS
   *JAVASCRIPT
   *BOOTSTRAP
-##Structure:
+## Structure:
   *Compilation of mini projects
-##Content:
+## Content:
   *Profolio
   *Resume
   *Teashop Menu
