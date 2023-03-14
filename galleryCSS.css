@@ -1,0 +1,23 @@
+.divTop{
+position: fixed;
+left: 0px;
+top: 0px;
+background-color: aqua;
+width: 1300px;
+height: 90px;
+}
+.divLeft{
+background-color: rgb(217, 173, 237);
+position: fixed;
+left: 0px;
+top: 90px;
+width: 200px;
+height: 100%;
+}
+.divRight{
+background-color: darksalmon;
+width: 1100px;
+height: 1000px;
+margin-top: 90px;
+margin-left: 192px;
+}

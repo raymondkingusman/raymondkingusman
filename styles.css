@@ -1,3 +1,9 @@
+body {
+    background-image: url('images/background.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    background-size: 100% 100%;
+  }
 /*---------------JAVASCRIPT TEXT MANIPULATION-------------------------*/
 p[id=nameRaymond]{
 	text-align: center;
@@ -9,10 +15,20 @@ style1 {
      font-weight: bold;
 }
 .refreshPage:hover{
+    opacity: 1.0;
     background-color: #00ffbf;
     cursor: context-menu;
 }
+.refreshPage{
+   border-radius: 30px;
+}
+th.refreshPage p{
+    font-weight: bold;
+    color: #000000;
+    font-size: 30px;
+}
 .stillBlank:hover{
+    opacity: 1.0;
     background-color: #00ffbf;
     cursor: context-menu;
 }
@@ -49,14 +65,15 @@ style1 {
 /*---------------------------PORTFOLIO---------------------------*/
 .portfolioForm{
     background-color: lightyellow;
-	width: 1000px;
+	width: 920px;
 }
 .portImg{
-    margin-top: 0px;
+    align-content: center;
     width: 270px;
     height: 270px;
 }
 .portHeader{
+	align-content: center;
     margin-top: 0px;
     font-size: 40px;
     font-weight: bolder;
@@ -64,7 +81,7 @@ style1 {
 .portText1{
     position: relative;
     top: -300px;
-    left: -10px;
+    left: -30px;
     margin-top: 100px;
     font-size: 20px;
     font-weight: bolder;
@@ -256,6 +273,38 @@ img[id=imgID]{
 	border: none;
 	text-align: left;
 	font-weight: bold;
+}
+.EdutxtField{
+	display: grid;
+	grid-template-areas:
+	'grid0 grid3'
+    'grid1 grid4'
+	'grid2 grid5';
+	gap: 10px;
+}
+.Edutxt1{
+	grid-area: grid0;
+	text-align: center;
+}
+.Edutxt2{
+	grid-area: grid1;
+	text-align: center;
+}
+.Edutxt3{
+	grid-area: grid2;
+	text-align: center;
+}
+.Edutxt4{
+	grid-area: grid3;
+	text-align: left;
+}
+.Edutxt5{
+	grid-area: grid4;
+	text-align: left;
+}
+.Edutxt6{
+	grid-area: grid5;
+	text-align: left;
 }
 /*============END of RESUME==================================================*/
 /*--------------------- TEA SHOP MENU ------------------*/
