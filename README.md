@@ -1,16 +1,15 @@
-# Mini Project 1
-## Technology Used:
+Technology Used:
   *HTML
   *CSS
   *JAVASCRIPT
   *BOOTSTRAP
-## Structure:
+Structure:
   *Compilation of mini projects
-## Content:
+Content:
+  *Profolio
+  *Resume
+  *Teashop Menu
+  *CSS grid format
+  *JS text Manipulation
+  *JS if/else and for loop sample(pyramid building)
 
-1. Profolio
-2. Resume
-3. Teashop Menu
-4. CSS grid format
-5. JS text Manipulation
-6. JS if/else and for loop sample(pyramid building)
