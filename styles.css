@@ -4,6 +4,17 @@ body {
     background-attachment: fixed; 
     background-size: 100% 100%;
   }
+.MainSelect{
+	width: 100%;
+	font-size: 17px;
+	border-radius: 10px;
+	font-family: Arial;
+	border: 6px solid transparent;
+	background-blend-mode: soft-light;
+}
+.MainSelect > option:hover{
+	background-color: aqua;
+}
 /*---------------JAVASCRIPT TEXT MANIPULATION-------------------------*/
 p[id=nameRaymond]{
 	text-align: center;
