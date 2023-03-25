@@ -121,11 +121,10 @@
 			temp.style.display = "grid";
 		}
 	}
-		
+/*  FUNCTION for Select option  */
 	function changeSelect(txtSelect){
 		var listValue = txtSelect.options[txtSelect.selectedIndex].text;
-		var element1 = document.getElementById("portfolioForm");
-		var temp = element1.setAttribute("hidden","hidden");
+		var element1 = document.getElementById("portfolioForm").style.display = "none";
 		regForm('hide');
 		CV('hide');
 		JStxtM('hide');
@@ -232,7 +231,7 @@
 		<!-- TOP MAIN TABLE -->
       <th colspan="2">
 		
-		  <table width="1300" height="70">
+		  <table width="100%" height="70" border="0">
 		  	<tr style="background-color: rgba(97, 240, 221, 0.3);">
 				<th class="refreshPage" onClick="refreshPage()" width="325">
 					<p>HOME</p>
@@ -318,30 +317,33 @@
 			</div>
 <!--==================END of PYRAMID FORM ==================================-->
 			<!--________--------------- PORTFOLIO PAGE -------------------------------------- -->
-			<fieldset class="portfolioForm" id="portfolioForm">
-				<p class="portHeader">WELCOME</p>
-				<img src="images/portfolio image.jpg" class="portImg">
-				<p class="portText1">Web Developer
-					<span class="subTxt1">Able to deliver High Performance</span>
-					<span class="subTxt2">and User Friendly Website</span>
-				</p>
-				<p class="portText2">Motivated Web Developer with a good record</p>
-				<p class="portText3">progressive experience. Energetic self-starter and</p>
-				<p class="portText4">team builder. Navigates high-stress situations and</p> 
-				<p class="portText5">achieves goals on time and under pressure. Qualified</p>
-				<p class="portText6">Web Developer with expertise in troubleshooting</p>
-				<p class="portText7">software, detecting bugs and errors and using</p>
-				<p class="portText8">wireframe models. Sharp, dedicated and hard-</p>
-				<p class="portText9">working team player. Committed to going extra mile</p>
-				<p class="portText10">to meet deadlines.</p>
-				<p style="margin-top: -450px"> <hr>
-				Email: ramond.king.usman@gmail.com
-				
-				Contact#: 1234567890
-				
-				</p>
-			
-			</fieldset>
+				<div class="portfolioGrid" id="portfolioForm">
+					<div class="portGrid1">
+						<p class="portHeader">WELCOME</p>
+						<span style="font-weight: bold; font-size: large;">I'm Raymond King Usman
+							I'm a Full Stack Web Developer
+							Able to deliver High Performance
+							and User Friendly Website</span>
+						
+					</div>
+					<div class="portGrid2">
+						<img src="images/portfolio image.jpg" class="portImg">
+					</div>
+					<div class="portGrid3">
+						<p>Motivated Web Developer with a good record
+						progressive experience. Energetic self-starter and
+						team builder. Navigates high-stress situations and
+						achieves goals on time and under pressure. Qualified
+						Web Developer with expertise in troubleshooting
+						software, detecting bugs and errors and using
+						wireframe models. Sharp, dedicated and hard-
+						working team player. Committed to going extra mile
+						to meet deadlines.</p>
+					</div>
+				<div class="portLine1"><hr></div>
+				<p class="portBtm1">Email: ramond.king.usman@gmail.com</p>
+				<p class="portBtm2">Contact#: 1234567890</p>
+				</div>
 <!--------------------------START RESUME------------------------------------------------------------>
 			<fieldset id="resumeForm" hidden="hidden">
 				<div id="div2">
@@ -368,16 +370,35 @@
 					in developing software. Always ready to learn new things and learn 
 					fast.
 					<h2>SKILLS & ABILITIES<hr></h2>
-					HTML,CSS,JAVASCRIPT,PHP,MYSQL,JAVA,VB.NET,C++,Unity,Photoshop
+					<div class="skillsAbilities">
+						<div class="skills1">
+							<ul>
+								<li>HTML</li>
+								<li>CSS</li>
+								<li>JAVASCRIPT</li>
+								<li>PHP</li>
+								<li>MYSQL</li>
+								<li>PHOTOSHOP</li>
+							  </ul>
+						</div>
+						<div class="skills2"> 
+							<ul>
+								<li>JAVA</li>
+								<li>VB/VB.NET</li>
+								<li>C++</li>
+								<li>UNITY</li>
+							  </ul>
+						</div>
+					</div>
 					<h2>EXPERIENCE<hr></h2>
 				<div class="EdutxtField">
-					<div class="Edutxt1"><h3>2015 up to present</h3></div>
+					<div class="Edutxt1"><h3>2011 up to 2012</h3></div>
 					<div class="Edutxt2"><h3>2019 up to 2022 January</h3></div>
 					<div class="Edutxt3"><h3>2011 up to 2012</h3></div>
 					<div class="Edutxt4">
-						<dt><h3>Freelance Web Development</h3></dt>
-						<dd>Freelancing on Onlinejobs.ph. Using</dd>
-						<dd>HTML,CSS,JAVASCRIPT,PHP and MySQL</dd>
+						<dt><h3>Freelance Software/Web Development</h3></dt>
+						<dd>Skills Use for Web/Software Dev.</dd>
+						<dd>HTML,JAVASCRIPT,PHP,VB,C++,JAVA and MySQL</dd>
 						<dd>for databasing.</dd>
 					</div>
 					<div class="Edutxt5">

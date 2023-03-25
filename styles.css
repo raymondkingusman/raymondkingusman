@@ -74,82 +74,42 @@ th.refreshPage p{
   .grid9 { grid-area: item5; }
 /*==========END GRID SYSTEM===============*/
 /*---------------------------PORTFOLIO---------------------------*/
-.portfolioForm{
+.portfolioGrid{
+    display: grid;
+    grid-template-areas: 
+    'grid1 grid2 grid3'
+    'pLine pLine pLine'
+    'bottom1 bottom2 bottom3';
+    gap: 0px;
     background-color: lightyellow;
-	width: 920px;
+    padding: 100px;
+    border-radius: 20px;
+}
+.portGrid1{
+    grid-area: grid1;
+}
+.portGrid2{
+    grid-area: grid2;
+}
+.portGrid3{
+    grid-area: grid3;
 }
 .portImg{
-    align-content: center;
     width: 270px;
     height: 270px;
 }
 .portHeader{
-	align-content: center;
-    margin-top: 0px;
     font-size: 40px;
     font-weight: bolder;
 }
-.portText1{
-    position: relative;
-    top: -300px;
-    left: -30px;
-    margin-top: 100px;
-    font-size: 20px;
-    font-weight: bolder;
+.portLine1{
+    grid-area: pLine;
 }
-.subTxt1{
-    position: relative;
-    left: -190px;
-    top: 20px;
-    font-size: 15px;
+.portBtm1{
+    grid-area: bottom1;
 }
-.subTxt2{
-    position: relative;
-    left: -370px;
-    top: 40px;
-    font-size: 15px;
-}
-.portText2,.portText3,.portText4,.portText5,.portText6,
-.portText7,.portText8,.portText9,.portText10{
-    position: relative;
-    font-size: 16px;
-    font-weight: bold;
-}
-.portText2{
-    top: -380px;
-    left: 235px;
-}
-.portText3{
-    top: -399px;
-    left: 260px;
-}
-.portText4{
-    top: -415px;
-    left: 265px;
-}
-.portText5{
-    top: -432px;
-    left: 280px;
-}
-.portText6{
-    top: -449px;
-    left: 269px;
-}
-.portText7{
-    top: -467px;
-    left: 263px;
-}
-.portText8{
-    top: -485px;
-    left: 264px;
-}
-.portText9{
-    top: -504px;
-    left: 283px;
-}
-.portText10{
-    top: -522px;
-    left: 162px;
+.portBtm2{
+    grid-area: bottom2;
 }
 /*=======================END OF PORTFOLIO======================================*/
 /*-----------DOG BLOG START-----------------------------------------------------*/
@@ -284,6 +244,20 @@ img[id=imgID]{
 	border: none;
 	text-align: left;
 	font-weight: bold;
+}
+.skillsAbilities{
+    display: grid;
+    grid-template-areas: 
+    'grid1 grid2';
+    gap: 10px;
+}
+.skills1{
+    grid-area: grid1;
+    text-align: left;
+}
+.skills2{
+    grid-area: grid2;
+    text-align: left;
 }
 .EdutxtField{
 	display: grid;
