@@ -5,15 +5,19 @@ body {
     background-size: 100% 100%;
   }
 .MainSelect{
-	width: 230px;
-	font-size: 17px;
-	border-radius: 10px;
-	font-family: Arial;
-	border: 6px solid transparent;
-	background-blend-mode: soft-light;
+    text-align: left;
+    background-color: rgba(134, 199, 225, 0.5);
+    background-blend-mode: lighten;
+    border-radius: 20px;
+    padding: 5px;
 }
-.MainSelect > option:hover{
+.MainSelects:hover{
 	background-color: aqua;
+    cursor: context-menu;
+}
+.MainSelects{
+    font-size: large;
+    font-weight: 400;
 }
 /*---------------JAVASCRIPT TEXT MANIPULATION-------------------------*/
 p[id=nameRaymond]{
@@ -81,7 +85,7 @@ th.refreshPage p{
     'pLine pLine pLine'
     'bottom1 bottom2 bottom3';
     gap: 0px;
-    background-color: lightyellow;
+    background-color: rgba(60, 222, 234, 0.6);
     padding: 100px;
     border-radius: 20px;
 }
@@ -201,7 +205,7 @@ div[id=registrationForm]{
 
 fieldset[id=resumeForm] {
   	border-radius: 5px;
-  	background-color:cadetblue;
+  	background-color:rgba(134, 199, 225, 0.6);
 	margin-left: 20px;
 	width: 700px;	
 }

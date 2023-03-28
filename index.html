@@ -122,8 +122,7 @@
 		}
 	}
 /*  FUNCTION for Select option  */
-	function changeSelect(txtSelect){
-		var listValue = txtSelect.options[txtSelect.selectedIndex].text;
+	function mySelect(listValue){
 		var element1 = document.getElementById("portfolioForm").style.display = "none";
 		regForm('hide');
 		CV('hide');
@@ -136,15 +135,15 @@
 		
 		if( listValue == "RESUME"){
 		   	CV('show');			
-		}else if(listValue == "JavaScript Text manipulation"){
+		}else if(listValue == "Text"){
 			JStxtM('show');					
-		}else if(listValue == "JavaScript Loopings"){
+		}else if(listValue == "Loopings"){
 			JSloop('show');
 		}else if(listValue == "Login"){
 			tblLogin('show');
-		}else if(listValue == "DOG PHOTO BLOG"){
+		}else if(listValue == "Dog Blog"){
 			DogBlog('show');
-		}else if(listValue == "Tea Shop Menu"){
+		}else if(listValue == "Tea Shop"){
 			TeaShopForm('show');
 		}else if(listValue == "Grid Container"){
 			GridForm('show');
@@ -226,7 +225,7 @@
 	
 <body>
 	<!-- MAIN TABLE-->
-  <table border="0" width="100%">
+  <table border="0git " width="100%">
     <tr>
 		<!-- TOP MAIN TABLE -->
       <th colspan="2">
@@ -247,18 +246,25 @@
     <tr>
       <td width="20%" align="center" valign="top"> 
 		  
-		<form> <!-- OPTION 1 Start-->
-			<select class="MainSelect" id="mySelect" size="20" onchange="changeSelect(this);">
-				
-			  <option>RESUME</option>
-			  <option>Login</option>
-			  <option>DOG PHOTO BLOG</option>
-			  <option>Tea Shop Menu</option>
-			  <option>Grid Container</option>
-			  <option>JavaScript Text manipulation</option>
-			  <option>JavaScript Loopings</option>
-			</select>
-		</form> <!-- OPTION 1 END-->
+		 <!------------------ OPTION 1 Start----------------------->
+		<div class="MainSelect">
+			  <dl>
+				<dt style="font-weight: bolder; font-size: 20px;">Sample HTML&CSS</dt>
+				<ol>
+					<li onclick="mySelect('RESUME')" class="MainSelects">Resume</li>
+					<li onclick="mySelect('Dog Blog')" class="MainSelects">Dog Photo Blog</li>
+					<li onclick="mySelect('Grid Container')" class="MainSelects">Grid Container</li>
+					<li onclick="mySelect('Tea Shop')" class="MainSelects">Tea Shop Menu</li>
+				</ol>
+				<dt style="font-weight: bolder; font-size: 20px;">Sample JavaScript</dt>
+				<ol>
+					<li onclick="mySelect('Login')" class="MainSelects">Login</li>
+					<li onclick="mySelect('Text')" class="MainSelects">Text Manipulation</li>
+					<li onclick="mySelect('Loopings')" class="MainSelects">Loopings & if/else</li>
+				</ol>
+			  </dl>
+		</div>
+		 <!---------------------------------- OPTION 1 END------------------------->
 
 		</td>
 <!--==============================================================================================================-->
